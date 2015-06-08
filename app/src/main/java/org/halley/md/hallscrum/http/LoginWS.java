@@ -19,7 +19,7 @@ import java.io.UnsupportedEncodingException;
 import org.halley.md.hallscrum.Model.Usuario;
 
 public class LoginWS extends AsyncTask<String,Integer,Usuario> {
-    private static String URL_LOGIN_API="http://192.168.1.7:3000/auth/login";
+    private static String URL_LOGIN_API="http://192.168.1.8:3000/auth/login";
     private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDMyODcwNjcxLCJleHAiOjE0MzQ1OTg2NzF9.R4r3srlBmiAahfTlyQDWN5alYA9EtWNGYWuGoZ8Igu4";
 
     @Override

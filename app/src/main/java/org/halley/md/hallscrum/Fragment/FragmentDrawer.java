@@ -22,6 +22,7 @@ import android.widget.SlidingDrawer;
 import org.halley.md.hallscrum.Activity.AboutUsActivity;
 import org.halley.md.hallscrum.Activity.ConfigActivity;
 import org.halley.md.hallscrum.Activity.HelpActivity;
+import org.halley.md.hallscrum.Activity.LoginActivity;
 import org.halley.md.hallscrum.Activity.MarkupActivity;
 import org.halley.md.hallscrum.Activity.SearchActivity;
 import org.halley.md.hallscrum.Adapter.TarjetAdapter;
@@ -78,8 +79,8 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
 
     public static List<TarjetRecycler> getData(){
         List<TarjetRecycler> data = new ArrayList<>();
-        int[] icons = {R.drawable.ic_action_favorite, R.drawable.ic_action_config,R.drawable.ic_action_help,R.drawable.ic_action_about};
-        String[] titles = {"Marcadores","Ajustes ", "Ayuda y Sugerencias", "Acerca De"};
+        int[] icons = {R.drawable.ic_action_favorite, R.drawable.ic_action_config,R.drawable.ic_action_help,R.drawable.ic_action_about, R.drawable.ic_action_logout};
+        String[] titles = {"Marcadores","Ajustes ", "Ayuda y Sugerencias", "Acerca De", "Logout"};
         for(int i=0; i<titles.length && i<icons.length;i++){
             TarjetRecycler current = new TarjetRecycler();
             current.idIcon = icons[i];
@@ -160,6 +161,9 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
                 break;
             case 3:
                 startActivity(new Intent(getActivity(), AboutUsActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
         }
 

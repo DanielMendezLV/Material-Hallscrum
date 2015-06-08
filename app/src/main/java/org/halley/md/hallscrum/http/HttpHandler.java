@@ -25,12 +25,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import org.halley.md.hallscrum.Model.Usuario;
 
-import halley.mendez.org.hallscrum.model.Usuario;
 
-/**
- * Created by retana on 22/05/2015.
- */
 public class HttpHandler {
     //http://192.168.1.12:3000
     private final String API_URL = "http://192.168.1.12:3000/";

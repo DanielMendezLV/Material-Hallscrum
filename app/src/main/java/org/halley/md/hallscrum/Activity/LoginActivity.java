@@ -50,11 +50,11 @@ public class LoginActivity extends Activity {
 
                 if(logged!=null){
                     Toast.makeText(getApplicationContext(),"Bienvenido: "+logged.getNombre(),Toast.LENGTH_LONG).show();
-
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }else{
                     Toast.makeText(getApplicationContext(),"Verifique sus Credenciales ",Toast.LENGTH_LONG).show();
                 }
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
             }
         });
 
