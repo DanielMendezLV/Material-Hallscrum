@@ -19,7 +19,7 @@ import java.io.UnsupportedEncodingException;
 import org.halley.md.hallscrum.Model.Usuario;
 
 public class LoginWS extends AsyncTask<String,Integer,Usuario> {
-    private static String URL_LOGIN_API="http://192.168.1.8:3000/auth/login";
+    private static String URL_LOGIN_API="http://192.168.56.1:3000/auth/login";
     private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDMyODcwNjcxLCJleHAiOjE0MzQ1OTg2NzF9.R4r3srlBmiAahfTlyQDWN5alYA9EtWNGYWuGoZ8Igu4";
 
     @Override
@@ -42,7 +42,7 @@ public class LoginWS extends AsyncTask<String,Integer,Usuario> {
             post.setEntity(stringEntity);
             //here this works
             HttpResponse respuesta=httpClient.execute(post);
-            System.out.println("Here doesn't work ");
+            //System.out.println("Here doesn't work ");
             JSONArray listaDeDatos=new JSONArray(EntityUtils.toString(respuesta.getEntity()));
             data=null;
             for (int i=0;i<listaDeDatos.length();i++){

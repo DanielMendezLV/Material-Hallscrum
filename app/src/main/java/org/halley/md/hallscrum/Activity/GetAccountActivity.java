@@ -1,13 +1,18 @@
 package org.halley.md.hallscrum.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.halley.md.hallscrum.MainActivity;
+import org.halley.md.hallscrum.Model.Usuario;
 import org.halley.md.hallscrum.R;
+import org.halley.md.hallscrum.http.UsuarioWS;
 
 import java.util.concurrent.ExecutionException;
 
@@ -44,29 +49,22 @@ public class GetAccountActivity extends Activity{
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*UsuarioWS insertar = new UsuarioWS();
 
+                UsuarioWS insertar = new UsuarioWS();
+                Usuario userIO = new Usuario();
                 try {
                     userIO=insertar.execute(txtNombre.getText().toString(),txtApellido.getText().toString(), txtNickname.getText().toString(), txtContrasena.getText().toString()).get();
+
+                    if(userIO!=null){
+                        Toast.makeText(getApplicationContext(), "Bienvenido: " + userIO.getNombre(), Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(GetAccountActivity.this,MainActivity.class));
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Verifique sus Credenciales ",Toast.LENGTH_LONG).show();
+                    }
                 }catch (InterruptedException | ExecutionException e){
                     Log.e("ERROR-INSERT", "" + e);
-                }*/
-
-
-
-                /*LoginWS autenticar=new LoginWS();
-                try {
-                    logged=autenticar.execute(txtUsuario.getText().toString(),txtContrasena.getText().toString()).get();
-                }catch (InterruptedException | ExecutionException e){
-                    Log.e("ERROR-LOGINEXEC", "" + e);
                 }
 
-                if(logged!=null){
-                    Toast.makeText(getApplicationContext(), "Bienvenido: " + logged.getNombre(), Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(LoginActivity.this,ActivityPrincipal.class));
-                }else{
-                    Toast.makeText(getApplicationContext(),"Verifique sus Credenciales ",Toast.LENGTH_LONG).show();
-                }*/
             }
         });
 

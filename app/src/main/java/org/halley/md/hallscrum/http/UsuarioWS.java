@@ -20,7 +20,7 @@ import org.halley.md.hallscrum.Model.Usuario;
 
 
 public class UsuarioWS extends AsyncTask<String,Integer,Usuario> {
-    private static String URL_LOGIN_API="http://192.168.1.8:3000/api/v1/usuario";
+    private static String URL_LOGIN_API="http://192.168.56.1:3000/api/v1/usuario";
     private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDMyODcwNjcxLCJleHAiOjE0MzQ1OTg2NzF9.R4r3srlBmiAahfTlyQDWN5alYA9EtWNGYWuGoZ8Igu4";
 
     @Override
@@ -33,10 +33,18 @@ public class UsuarioWS extends AsyncTask<String,Integer,Usuario> {
         JSONObject data=new JSONObject();
         data=null;
         try {
-            data.put("nombre",params[0]);
-            data.put("apellido",params[1]);
+            System.out.println(params[0]);
+
+            System.out.println(params[1]);
+
+            System.out.println(params[2]);
+
+            System.out.println(params[3]);
+            data.put("nombre", params[0]);
+            data.put("apellido", params[1]);
             data.put("nickname", params[2]);
             data.put("contrasena", params[3]);
+
 
             //Aca si llegan los datos.
             StringEntity stringEntity=new StringEntity(data.toString());
@@ -45,8 +53,8 @@ public class UsuarioWS extends AsyncTask<String,Integer,Usuario> {
             HttpResponse respuesta=httpClient.execute(post);
             JSONArray listaDeDatos=new JSONArray(EntityUtils.toString(respuesta.getEntity()));
            // Usuario(Integer idUsuario, String nombre,String apellido, String nickname, String contrasena)
-            return new Usuario(data.get("nombre").toString(),data.get("apellido").toString(),data.get("nickname").toString(),data.get("contrasena").toString());
-            /*for (int i=0;i<listaDeDatos.length();i++){
+            data=null;
+            for (int i=0;i<listaDeDatos.length();i++){
                 data=listaDeDatos.getJSONObject(i);
 
                 return new Usuario(
@@ -56,7 +64,8 @@ public class UsuarioWS extends AsyncTask<String,Integer,Usuario> {
                         data.getString("nickname"),
                         data.getString("contrasena")
                 );
-            }*/
+            }
+
 
 
 
