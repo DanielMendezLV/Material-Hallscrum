@@ -16,9 +16,9 @@
     <item>Metas</item>
     <item>Equipos</item>
 </string-array>
-    <string name="title_activity_help">Ayuda</string>
+    <string name="title_activity_help">Ayuda y Sugerencias</string>
     <string name="title_activity_markup">Marcadores</string>
-    <string name="title_activity_config">Ajustes y Sugerencias</string>
+    <string name="title_activity_config">Ajustes </string>
     <string name="title_activity_about_us">Acerca De</string>
     <string name="title_activity_getAcount">Haz una cuenta</string>
     <string name="login">Login</string>
