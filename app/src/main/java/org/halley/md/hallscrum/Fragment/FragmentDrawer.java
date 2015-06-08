@@ -1,6 +1,7 @@
 package org.halley.md.hallscrum.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SlidingDrawer;
 
+import org.halley.md.hallscrum.Activity.AboutUsActivity;
+import org.halley.md.hallscrum.Activity.ConfigActivity;
+import org.halley.md.hallscrum.Activity.HelpActivity;
+import org.halley.md.hallscrum.Activity.MarkupActivity;
+import org.halley.md.hallscrum.Activity.SearchActivity;
 import org.halley.md.hallscrum.Adapter.TarjetAdapter;
 import org.halley.md.hallscrum.Model.TarjetRecycler;
 import org.halley.md.hallscrum.R;
@@ -28,7 +34,7 @@ import java.util.List;
 
 
 
-public class FragmentDrawer extends Fragment {
+public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListener {
     private RecyclerView recyclerView;
     public static final String PREF_FILE_NAME="testpref";
     public static final String KEY_USER_DRAWER="user_learned_drawer";
@@ -61,10 +67,12 @@ public class FragmentDrawer extends Fragment {
         View layout= inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
         recyclerView = (RecyclerView) layout.findViewById(R.id.drawerList);
         adapter = new TarjetAdapter(getActivity(), getData());
+        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //Cuando el recycler view es añadido a la lista debe de contar con un layout.
+        //Cuando el recycler view es a
+        // ñadido a la lista debe de contar con un layout.
         return layout;
     }
 
@@ -136,5 +144,24 @@ public class FragmentDrawer extends Fragment {
     public static String readFromPreferences(Context context,String preferenceName, String defaultValue){
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_FILE_NAME,context.MODE_PRIVATE);
         return sharedPreferences.getString(preferenceName,defaultValue);
+    }
+
+    @Override
+    public void itemClicked(View view, int position) {
+        switch (position){
+            case 0:
+                startActivity(new Intent(getActivity(), MarkupActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(getActivity(), ConfigActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(getActivity(), HelpActivity.class));
+                break;
+            case 3:
+                startActivity(new Intent(getActivity(), AboutUsActivity.class));
+                break;
+        }
+
     }
 }

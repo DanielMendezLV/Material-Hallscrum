@@ -1,9 +1,8 @@
 package org.halley.md.hallscrum.Activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,30 +10,17 @@ import android.view.MenuItem;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.R;
 
-
-import android.app.ActionBar;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-
-
-
-
-public class SearchActivity extends ActionBarActivity {
-
+public class HelpActivity extends ActionBarActivity {
     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_help);
         toolbar = (Toolbar)findViewById(R.id.toolbar);//
         //Yo ya no quiero usar tu toolbar, por esto yo te envio el mio para que le des soporte
         setSupportActionBar(toolbar);
-       // getSupportActionBar()
+        // getSupportActionBar()
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -42,7 +28,7 @@ public class SearchActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_search, menu);
+        getMenuInflater().inflate(R.menu.menu_help, menu);
         return true;
     }
 
@@ -59,7 +45,7 @@ public class SearchActivity extends ActionBarActivity {
         }
 
         if(id==android.R.id.home){
-            startActivity(new Intent(SearchActivity.this,MainActivity.class));
+            startActivity(new Intent(HelpActivity.this,MainActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

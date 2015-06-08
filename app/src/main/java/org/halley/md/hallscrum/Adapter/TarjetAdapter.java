@@ -23,10 +23,13 @@ import java.util.List;
 public class TarjetAdapter extends RecyclerView.Adapter<TarjetAdapter.MyViewHolder> {
     private LayoutInflater inflater;
     List<TarjetRecycler> data = Collections.emptyList();
+    private Context context;
+    private ClickListener clickListener;
 
     public TarjetAdapter(Context context, List<TarjetRecycler> data){
         inflater= LayoutInflater.from(context);
         this.data=data;
+        this.context=context;
     }
 
     //Un view holder describe un elemento que se encuentra en un recycler view
@@ -52,13 +55,36 @@ public class TarjetAdapter extends RecyclerView.Adapter<TarjetAdapter.MyViewHold
     }
 
     //Para crear un nuevo viewholder necesito que se cree una vista.
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
         ImageView icon;
         public MyViewHolder(View itemView) {
             super(itemView);
+           // itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
             title= (TextView) itemView.findViewById(R.id.listText);
             icon = (ImageView) itemView.findViewById(R.id.list_icon);
         }
+
+
+        @Override
+        public void onClick(View v) {
+            if(clickListener!=null){
+                clickListener.itemClicked(v,getPosition());
+            }
+
+        }
+
+
     }
+
+    public void setClickListener(ClickListener clickListener){
+        this.clickListener= clickListener;
+    }
+
+    public interface ClickListener{
+        public void itemClicked(View view,int position);
+    }
+
+
 }

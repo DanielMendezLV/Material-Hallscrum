@@ -1,12 +1,45 @@
 <resources>
-    <string name="app_name">HallScrum</string>
+<string name="app_name">HallScrum</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="search">Busqueda</string>
-    <string name="action_settings">Settings</string>
+<string name="hello_world">Hello world!</string>
+<string name="search">Busqueda</string>
+<string name="action_settings">Settings</string>
 
 <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="drawer_open">Abrir</string>
-    <string name="drawer_close">Cerrar</string>
+<string name="hello_blank_fragment">Hello blank fragment</string>
+<string name="drawer_open">Abrir</string>
+<string name="drawer_close">Cerrar</string>
+
+
+<string-array name="tabs">
+    <item>Proyectos</item>
+    <item>Metas</item>
+    <item>Equipos</item>
+</string-array>
+    <string name="title_activity_help">Ayuda</string>
+    <string name="title_activity_markup">Marcadores</string>
+    <string name="title_activity_config">Ajustes y Sugerencias</string>
+    <string name="title_activity_about_us">Acerca De</string>
+    <string name="title_activity_getAcount">Haz una cuenta</string>
+    <string name="login">Login</string>
+
+
+    <string name="hint_user">Introduce Tu Usuario</string>
+    <string name="hint_lastname">Introduce Tu Apellido</string>
+    <string name="hint_nickname">Introduce Tu Nickname</string>
+    <string name="hint_password">Introduce Tu Contraseña</string>
+
+    <string name="acept_politic">Al hacer click en Registrar, aceptas las siguientes politicas de HallScrum:</string>
+    <string name="politic">Condiciones de uso y politica de privacidad</string>
+    <string name="do_you_have_account">¿Ya tienes una cuenta?  Inicia Sesion</string>
+
+    <string name="hint_pass">Password</string>
+    <string name="txt_newAcount">Crea una nueva cuenta</string>
+    <string name="bienvenida">Bienvenido</string>
+    <string name="title_login">Login</string>
+    <string name="title_logout">Logout</string>
+    <string name="title_registrar">Registrar</string>
+    <string name="splash_activity_string">Splash</string>
+
+
 </resources>

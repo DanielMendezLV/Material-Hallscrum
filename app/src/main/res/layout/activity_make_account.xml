@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView3"
+            android:text="@string/title_registrar"
+            android:textSize="@dimen/abc_action_bar_progress_bar_size"
+            android:textColor="#ffffffff"
+            android:gravity="center"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="39dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtNombre"
+        android:hint="@string/hint_user"
+        android:gravity="center"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtNickname"
+        android:gravity="center"
+        android:hint="@string/hint_nickname"
+        android:layout_below="@+id/txtNombre"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegistrar"
+        android:background="@drawable/btn_blue_circle_corners"
+        android:text="@string/title_registrar"
+        android:layout_below="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txtApellido"
+        android:hint="@string/hint_lastname"
+        android:gravity="center"
+        android:layout_below="@+id/txtNickname"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txtContrasena"
+        android:hint="@string/hint_password"
+        android:gravity="center"
+        android:layout_below="@+id/txtApellido"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/acept_politic"
+        android:id="@+id/textView5"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/txtContrasena"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/politic"
+        android:id="@+id/textView6"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
