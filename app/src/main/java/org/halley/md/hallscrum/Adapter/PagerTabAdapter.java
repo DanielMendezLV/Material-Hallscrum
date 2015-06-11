@@ -3,6 +3,7 @@ import android.app.FragmentManager;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
@@ -17,7 +18,7 @@ import android.content.Context;
 /**
  * Created by Mendez Diaz on 07/06/2015.
  */
-public class PagerTabAdapter extends FragmentPagerAdapter {
+public class PagerTabAdapter extends FragmentStatePagerAdapter {
     //array de tabass
     private String[] tabs;
     private int[] icons = {R.drawable.ic_action_proyect,R.drawable.ic_action_team, R.drawable.ic_action_meta};

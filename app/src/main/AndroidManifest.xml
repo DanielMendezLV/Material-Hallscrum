@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.halley.md.hallscrum" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,15 +13,11 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-
         </activity>
-
         <activity
             android:name=".Activity.LoginActivity"
             android:label="@string/login" >
         </activity>
-
-
         <activity
             android:name=".Splash.Splash"
             android:label="@string/splash_activity_string" >
@@ -28,8 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".Activity.SearchActivity"
             android:label="Buscar..." >
@@ -50,18 +47,14 @@
             android:name=".Activity.AboutUsActivity"
             android:label="@string/title_activity_about_us" >
         </activity>
-
-
-
         <activity
             android:name=".Activity.GetAccountActivity"
             android:label="@string/title_activity_getAcount" >
         </activity>
-
-
+        <activity
+            android:name=".db.ActivityDb"
+            android:label="@string/title_activity_activity_db" >
+        </activity>
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

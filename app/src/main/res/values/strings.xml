@@ -40,6 +40,7 @@
     <string name="title_logout">Logout</string>
     <string name="title_registrar">Registrar</string>
     <string name="splash_activity_string">Splash</string>
+    <string name="title_activity_activity_db">ActivityDb</string>
 
 
 </resources>
