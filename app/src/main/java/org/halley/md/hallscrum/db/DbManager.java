@@ -54,7 +54,7 @@ public class DbManager {
     }
 
     public void eliminar(String id){
-        //delete  //tabla        //where //campo a sustituir //sustitución
+
         db.delete(TABLE_USUARIO, CN_ID + "=?", new String[]{id});
     }
 

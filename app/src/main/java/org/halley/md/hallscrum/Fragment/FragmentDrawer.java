@@ -72,8 +72,6 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //Cuando el recycler view es a
-        // ñadido a la lista debe de contar con un layout.
         return layout;
     }
 
