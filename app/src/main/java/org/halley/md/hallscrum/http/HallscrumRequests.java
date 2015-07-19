@@ -41,12 +41,6 @@ public class HallscrumRequests {
         volleySingleton = volleySingleton.getsInstance();
         requestQueue = volleySingleton.getmRequestQueue();
         System.out.println("... llego a Hallscrum Request");
-        //"http://192.168.1.7:3000/api/proyect"
-        // JsonArrayRequest rq = new JsonArrayRequest()
-        //Map<String, String> postParam= new HashMap<String, String>();
-        //postParam.put("nickname", nickname);
-        //postParam.put("contrasena", contrasena);
-
         JsonArrayRequest request = new JsonArrayRequest(method,url,new JSONObject(mapDatos), new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {

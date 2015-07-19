@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import org.halley.md.hallscrum.API.AddressAPI;
@@ -31,7 +32,9 @@ public class AddProyectActivity extends ActionBarActivity implements AdapterView
     private Button btnAgregarProyecto;
     private TextView txtNombreProyecto;
     private String idUsuario;
+    private String idEquipo;
     private Spinner espEquipos;
+    private SpinnerAdapter spn_teamAdap;
     private ArrayList<Team> listaSpinner = new ArrayList<Team>();
 
 
@@ -62,17 +65,26 @@ public class AddProyectActivity extends ActionBarActivity implements AdapterView
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        DbManager db = new DbManager(getApplicationContext());
-        idUsuario = db.getIdUsuarioLogueado();
-        System.out.println("... holo holo llego ");
+        //DbManager db = new DbManager(getApplicationContext());
+
+
+
+        //System.out.println("... holo holo llego ");
 
         btnAgregarProyecto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //System.out.println("llega al click?");
-                System.out.println("el id es " + idUsuario);
+                //nombre equipo fecha
+                int tmId = espEquipos.getSelectedItemPosition();
+                spn_teamAdap = espEquipos.getAdapter();
+                Team tms = (Team)spn_teamAdap.getItem(tmId);
+                idEquipo = Integer.toString(tms.getIdEquipo());
+                System.out.println(idEquipo);
+                Team tm = (Team) ((Spinner) findViewById(R.id.spinner_teams)).getSelectedItem();
+                System.out.println("el id equipo es " + idEquipo);
                 HallscrumRequests hallscrumRequests = new HallscrumRequests();
-                hallscrumRequests.addHallScrum(AddressAPI.URL_PROJECTS,getMapAgregar(txtNombreProyecto.getText().toString(),idUsuario));
+                hallscrumRequests.addHallScrum(AddressAPI.URL_PROJECTS,getMapAgregar(txtNombreProyecto.getText().toString(),idEquipo));
             }
         });
 
@@ -81,7 +93,7 @@ public class AddProyectActivity extends ActionBarActivity implements AdapterView
     public Map<String, String> getMapAgregar(String nombre, String id){
         Map<String, String> add= new HashMap<String, String>();
         add.put("nombre", nombre);
-        add.put("id", id);
+        add.put("idequipo", id);
         return add;
     }
 
