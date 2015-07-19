@@ -18,12 +18,14 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+// Esta onda ya no sirve , ahora usa volley xD :v :'v
 
 
 public class AsyncHttp extends AsyncTask<String,Integer,Usuario>{
     //TODO: DEFINICIoN DE RUTAS DEL API
     private static String URL_API="http://192.168.1.12:3000/";
     private static String LOGIN_API=URL_API+"auth/login";
+    private static String USUARIO_API1=URL_API+"auth/register";
     private static String USUARIO_API=URL_API+"api/v1/usuario";
     //TODO: Llave para acceder al API
     private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDMyNzIyNTUwLCJleHAiOjE0MzQ0NTA1NTB9.FdURsguvFO8xKTXvJAS4i02KmsqC7dvVQiDr_fDJJC0";
@@ -52,8 +54,8 @@ public class AsyncHttp extends AsyncTask<String,Integer,Usuario>{
             data=null;
             for (int i=0;i<arrayDeDatos.length();i++){
                 data=arrayDeDatos.getJSONObject(i);
-                //Integer idUsuario, String nombre,String apellido, String nickname, String contrasena
-                usuario=new Usuario(data.getInt("idusuario"),data.getString("nombre"),data.getString("apellido")
+                // String nombre,String apellido, String nickname, String contrasena
+                usuario=new Usuario(data.getString("nombre"),data.getString("apellido")
                         ,data.getString("nickname"),data.getString("contrasena"));
                 return usuario;
             }

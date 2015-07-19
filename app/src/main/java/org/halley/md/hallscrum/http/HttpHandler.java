@@ -88,7 +88,7 @@ public class HttpHandler {
             try{
                 Log.e("RESULTADO: ",obj.getString("nombre"));
                 obj=array.getJSONObject(i);
-                Usuario usr=new Usuario(obj.getInt("idUsuario"),obj.getString("nombre"),obj.getString("apellido")
+                Usuario usr=new Usuario(obj.getString("nombre"),obj.getString("apellido")
                 ,obj.getString("nickname"),obj.getString("contrasena"));
                 listaUsuario.add(usr);
             }catch(Exception e){
@@ -126,7 +126,7 @@ public class HttpHandler {
                 try{
                     obj=array.getJSONObject(i);
                     Log.e("RESULTADO: ",obj.getString("nombre"));
-                    Usuario usr=new Usuario(obj.getInt("idusuario"),obj.getString("nombre"),obj.getString("apellido")
+                    Usuario usr=new Usuario(obj.getString("nombre"),obj.getString("apellido")
                             ,obj.getString("nickname"),obj.getString("contrasena"));
                     return usr;
                 }catch(Exception e){

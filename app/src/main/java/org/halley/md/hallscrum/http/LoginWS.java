@@ -10,18 +10,18 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Model.Usuario;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import org.halley.md.hallscrum.Model.Usuario;
 
 public class LoginWS extends AsyncTask<String,Integer,Usuario> {
-    private static String URL_LOGIN_API="http://192.168.1.7:3000/auth/login";
-    private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDMyODcwNjcxLCJleHAiOjE0MzQ1OTg2NzF9.R4r3srlBmiAahfTlyQDWN5alYA9EtWNGYWuGoZ8Igu4";
-
+    private static String URL_LOGIN_API= AddressAPI.URL_LOGIN;
+    private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDM2MjAyMDAxLCJleHAiOjE0Mzc5MzAwMDF9.vUyVP-NcPz0ZaAuENvQXmwOKxwqXVZEL2jg47JKiYwc";
     @Override
     protected Usuario doInBackground(String... params) {
         HttpClient httpClient = new DefaultHttpClient();

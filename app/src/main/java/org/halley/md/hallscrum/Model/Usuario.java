@@ -11,6 +11,7 @@ public class Usuario {
     private String contrasena;
 
 
+
     public Usuario(Integer idUsuario, String nombre, String apellido, String nickname, String contrasena) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
@@ -51,7 +52,7 @@ public class Usuario {
         return nickname;
     }
 
-    public void setNick(String nick) {
+    public void setNickname(String nick) {
         this.nickname = nick;
     }
 

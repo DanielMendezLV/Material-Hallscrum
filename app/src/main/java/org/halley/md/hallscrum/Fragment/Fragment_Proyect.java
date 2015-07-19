@@ -1,9 +1,9 @@
 package org.halley.md.hallscrum.Fragment;
 
 
-import android.app.DownloadManager;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,15 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.melnykov.fab.FloatingActionButton;
 
+import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Activity.Adds.AddProyectActivity;
 import org.halley.md.hallscrum.Adapter.ProyectAdapter;
 import org.halley.md.hallscrum.Model.Proyect;
 import org.halley.md.hallscrum.Network.VolleySingleton;
@@ -29,7 +28,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.StringReader;
 import java.util.ArrayList;
 
 /**
@@ -68,7 +66,7 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
         requestQueue = volleySingleton.getmRequestQueue();
 
 
-        JsonArrayRequest request = new JsonArrayRequest("http://192.168.1.7:3000/api/proyect", new Response.Listener<JSONArray>() {
+        JsonArrayRequest request = new JsonArrayRequest(AddressAPI.URL_PROJECTS, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 if (response.length() > 0) {
@@ -79,7 +77,6 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), ""+error, Toast.LENGTH_LONG).show();
                 Log.d("VolleyError", "Error");
             }
 
@@ -116,6 +113,16 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment__proyect, container, false);
         listProyects = (RecyclerView) view.findViewById(R.id.listProyects);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.attachToRecyclerView(listProyects);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //System.out.println("... lllll ego oooo a  fragment y paso al otro");
+                startActivity(new Intent(getActivity(), AddProyectActivity.class));
+            }
+        });
+
         listProyects.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new ProyectAdapter(getActivity());
         listProyects.setAdapter(adapter);

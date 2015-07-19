@@ -42,11 +42,34 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
+        android:id="@+id/txtApellido"
+        android:hint="@string/hint_lastname"
+        android:gravity="center"
+        android:layout_below="@+id/txtNombre"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
         android:id="@+id/txtNickname"
         android:gravity="center"
         android:hint="@string/hint_nickname"
-        android:layout_below="@+id/txtNombre"
+        android:layout_below="@+id/txtApellido"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txtContrasena"
+        android:hint="@string/hint_password"
+        android:gravity="center"
+        android:layout_below="@+id/txtNickname"
+        android:layout_alignParentStart="true" />
+
 
     <Button
         android:layout_width="fill_parent"
@@ -58,27 +81,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/txtApellido"
-        android:hint="@string/hint_lastname"
-        android:gravity="center"
-        android:layout_below="@+id/txtNickname"
-        android:layout_alignParentStart="true" />
 
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/txtContrasena"
-        android:hint="@string/hint_password"
-        android:gravity="center"
-        android:layout_below="@+id/txtApellido"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"

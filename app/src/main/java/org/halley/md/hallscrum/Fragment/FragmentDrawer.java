@@ -3,33 +3,28 @@ package org.halley.md.hallscrum.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SlidingDrawer;
 
 import org.halley.md.hallscrum.Activity.AboutUsActivity;
 import org.halley.md.hallscrum.Activity.ConfigActivity;
 import org.halley.md.hallscrum.Activity.HelpActivity;
 import org.halley.md.hallscrum.Activity.LoginActivity;
 import org.halley.md.hallscrum.Activity.MarkupActivity;
-import org.halley.md.hallscrum.Activity.SearchActivity;
 import org.halley.md.hallscrum.Adapter.TarjetAdapter;
 import org.halley.md.hallscrum.Model.TarjetRecycler;
 import org.halley.md.hallscrum.R;
+import org.halley.md.hallscrum.db.DbManager;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,7 +89,7 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
        // System.out.println("..... drawerLayout");
         mDrawerLayout = drawerLayout;
         //System.out.println("...toogle");
-        System.out.println("... llego aca?");
+        //System.out.println("... llego aca?");
         mDrawerToggle = new ActionBarDrawerToggle(getActivity(),
                 drawerLayout,toolbar,R.string.drawer_open, R.string.drawer_close){
 
@@ -161,6 +156,14 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
                 startActivity(new Intent(getActivity(), AboutUsActivity.class));
                 break;
             case 4:
+
+                DbManager dbManager = new DbManager(getActivity());
+                Cursor cursor = dbManager.query(DbManager.TABLE_USUARIO,null,null,null);
+                while(cursor.moveToNext()){
+                    String id = cursor.getString(0);
+                    dbManager.eliminar(id);
+                }
+
                 startActivity(new Intent(getActivity(), LoginActivity.class));
                 break;
         }

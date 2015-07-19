@@ -24,7 +24,7 @@
     <string name="login">Login</string>
 
 
-    <string name="hint_user">Introduce Tu Usuario</string>
+    <string name="hint_user">Introduce Tu Nombre</string>
     <string name="hint_lastname">Introduce Tu Apellido</string>
     <string name="hint_nickname">Introduce Tu Nickname</string>
     <string name="hint_password">Introduce Tu Contraseña</string>
@@ -34,13 +34,21 @@
     <string name="do_you_have_account">¿Ya tienes una cuenta?  Inicia Sesion</string>
 
     <string name="hint_pass">Password</string>
+    <string name="hint_every_name">Introduce el nombre</string>
     <string name="txt_newAcount">Crea una nueva cuenta</string>
     <string name="bienvenida">Bienvenido</string>
     <string name="title_login">Login</string>
+    <string name="title_add_team">Agregar Equipo</string>
+    <string name="title_add_proyect">Agregar Proyecto</string>
     <string name="title_logout">Logout</string>
     <string name="title_registrar">Registrar</string>
     <string name="splash_activity_string">Splash</string>
     <string name="title_activity_activity_db">ActivityDb</string>
+    <string name="title_activity_add_team">AddTeamActivity</string>
+    <string name="title_activity_add_proyect">AddProyectActivity</string>
+    <string name="title_activity_add_fase">Agregar Meta</string>
+    <string name="title_activity_add_meta">Agregar Meta</string>
+
 
 
 </resources>

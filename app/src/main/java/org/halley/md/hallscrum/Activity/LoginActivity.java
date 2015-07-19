@@ -12,6 +12,7 @@ import android.widget.Toast;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.Model.Usuario;
 import org.halley.md.hallscrum.R;
+import org.halley.md.hallscrum.db.DbManager;
 import org.halley.md.hallscrum.http.HttpHandler;
 import org.halley.md.hallscrum.http.LoginWS;
 
@@ -43,7 +44,9 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 LoginWS autenticar=new LoginWS();
                 try {
+                   // final ProgressDialog progressDialog = ProgressDialog.show(getA(), "Espere por favor", "Estamos verificando sus datos");
                     logged=autenticar.execute(txtUsuario.getText().toString(),txtContrasena.getText().toString()).get();
+                   // progressDialog.cancel();
                 }catch (InterruptedException | ExecutionException e){
                     Log.e("ERROR-LOGINEXEC",""+e);
                 }
@@ -51,6 +54,9 @@ public class LoginActivity extends Activity {
                 if(logged!=null){
                     Toast.makeText(getApplicationContext(),"Bienvenido: "+logged.getNombre(),Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    //DbManager dbManager = new DbManager(getApplicationContext());
+                    //dbManager.insertarUsuario(Integer.toString(logged.getIdUsuario()), logged.getNombre(),logged.getApellido(), logged.getNickname(), logged.getContrasena());
+
                 }else{
                     Toast.makeText(getApplicationContext(),"Verifique sus Credenciales ",Toast.LENGTH_LONG).show();
                 }
