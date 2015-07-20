@@ -46,8 +46,10 @@
     <string name="title_activity_activity_db">ActivityDb</string>
     <string name="title_activity_add_team">AddTeamActivity</string>
     <string name="title_activity_add_proyect">AddProyectActivity</string>
-    <string name="title_activity_add_fase">Agregar Meta</string>
+    <string name="title_activity_add_fase">Agregar Fase</string>
     <string name="title_activity_add_meta">Agregar Meta</string>
+    <string name="title_activity_list_fases">Fases</string>
+    <string name="title_activity_list_meta">Metas</string>
 
 
 

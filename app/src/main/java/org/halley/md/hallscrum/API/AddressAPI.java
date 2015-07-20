@@ -10,6 +10,9 @@ public class AddressAPI {
     public static final String URL_TEAMS ="http://192.168.1.12:3000/api/equipo";
     public static final String URL_TEAMS_ALT ="http://192.168.1.12:3000/api/equipo_alternative";
     public static final String URL_META ="http://192.168.1.12:3000/api/meta";
+    public static final String URL_META_INSERT ="http://192.168.1.12:3000/api/meta_insert";
+    public static final String URL_FASES="http://192.168.1.12:3000/api/fase";
+    public static final String URL_FASES_INSERT="http://192.168.1.12:3000/api/fase_insert";
 
 
 }

@@ -4,6 +4,7 @@ package org.halley.md.hallscrum.Model;
  * Created by Mendez Diaz on 11/06/2015.
  */
 public class Proyect {
+
     public int getFoto() {
         return foto;
     }
@@ -13,6 +14,15 @@ public class Proyect {
     }
 
     private int foto;
+    private int idProyecto;
+
+    public int getIdProyecto() {
+        return idProyecto;
+    }
+
+    public void setIdProyecto(int idProyecto) {
+        this.idProyecto = idProyecto;
+    }
 
     public String getFechaCreacion() {
         return fechaCreacion;

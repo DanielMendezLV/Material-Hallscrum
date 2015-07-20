@@ -1,6 +1,7 @@
 package org.halley.md.hallscrum.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.halley.md.hallscrum.Activity.Adds.AddMetaActivity;
+import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
 import org.halley.md.hallscrum.Model.Proyect;
 import org.halley.md.hallscrum.Model.TarjetRecycler;
 import org.halley.md.hallscrum.R;
@@ -24,9 +27,16 @@ import java.util.List;
 public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHolderProyectAdapter> {
     private LayoutInflater inflater;
     private ArrayList<Proyect> proyects = new ArrayList<>();
+    private Context context;
 
+
+    public void delete(int position){
+         proyects.remove(position);
+         notifyItemRemoved(position);
+    }
 
     public ProyectAdapter(Context context){
+        this.context=context;
         inflater= LayoutInflater.from(context);
 
     }
@@ -49,8 +59,7 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
         holder.proyectTitle.setText(currentProyect.getNombre());
         holder.proyectDate.setText(currentProyect.getFechaCreacion());
         holder.proyectThumbnail.setImageResource(currentProyect.getFoto());
-
-
+        holder.id = currentProyect.getIdProyecto();
     }
 
     @Override
@@ -58,19 +67,38 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
        return proyects.size();
     }
 
-    static class ViewHolderProyectAdapter extends RecyclerView.ViewHolder{
+    class ViewHolderProyectAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
+        //implements View.OnClickListener
         private ImageView proyectThumbnail;
         private TextView proyectTitle;
         private TextView proyectDate;
+        private int id;
 
 
         public ViewHolderProyectAdapter(View itemView){
             super(itemView);
+            itemView.setOnClickListener(this);
             proyectThumbnail = (ImageView) itemView.findViewById(R.id.proyectThumbnail);
             proyectTitle = (TextView) itemView.findViewById(R.id.proyectTitle);
             proyectDate = (TextView) itemView.findViewById(R.id.proyectDate);
         }
+
+        @Override
+        public void onClick(View view) {
+            TextView tv = (TextView) proyectTitle;
+            //System.out.println(tv.getText().toString());
+            //System.out.println(id);
+            //System.out.println("idddd" + id);
+            Intent intent = new Intent(context, ListFasesActivity.class);
+            intent.putExtra("idproyecto", id);
+
+           // intent.putExtra("nombreproyecto",tv.getText().toString());
+            context.startActivity(intent);
+            //context.startActivity(new Intent(context, ListFasesActivity.class));
+        }
+
     }
+
 
 
 }

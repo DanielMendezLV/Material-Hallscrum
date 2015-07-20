@@ -15,6 +15,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Activity.Listed.ListMetaActivity;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.Model.Team;
 import org.halley.md.hallscrum.R;

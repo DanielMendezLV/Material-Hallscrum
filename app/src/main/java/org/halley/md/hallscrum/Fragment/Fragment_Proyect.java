@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
     private ArrayList<Proyect> proyects = new ArrayList<Proyect>();
     private RecyclerView listProyects;
     private ProyectAdapter adapter;
+
 
     public void setProyects(ArrayList<Proyect> proyects){
         this.proyects=proyects;
@@ -93,8 +95,7 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
                 Proyect pry = new Proyect();
                 pry.setNombre(proyectoDownload.getString("nombre"));
                 pry.setFechaCreacion(proyectoDownload.getString("fechacreacion"));
-                System.out.println(pry.getNombre());
-                System.out.println(pry.getFechaCreacion());
+                pry.setIdProyecto(proyectoDownload.getInt("idproyecto"));
                 pry.setFoto(R.drawable.ic_action_person);
 
                 listaProyectos.add(pry);

@@ -21,7 +21,7 @@ import android.content.Context;
 public class PagerTabAdapter extends FragmentStatePagerAdapter {
     //array de tabass
     private String[] tabs;
-    private int[] icons = {R.drawable.ic_action_proyect,R.drawable.ic_action_team, R.drawable.ic_action_meta};
+    private int[] icons = {R.drawable.ic_action_proyect,R.drawable.ic_action_team};
     private Context context;
 
     //El adaptador neceista de un fragmentManager
@@ -44,9 +44,6 @@ public class PagerTabAdapter extends FragmentStatePagerAdapter {
             case 1:
                 fragment  = new Fragment_Team();
                 break;
-            case 2:
-                fragment  = new Fragment_Meta();
-                break;
 
         }
 
@@ -66,7 +63,7 @@ public class PagerTabAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 }
 

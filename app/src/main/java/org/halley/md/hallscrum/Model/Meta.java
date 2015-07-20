@@ -32,6 +32,26 @@ public class Meta {
 
     private boolean estado;
     private String descripcion;
+    private int idMeta;
+    private int idFase;
+
+
+
+    public int getIdMeta() {
+        return idMeta;
+    }
+
+    public void setIdMeta(int idMeta) {
+        this.idMeta = idMeta;
+    }
+
+    public int getIdFase() {
+        return idFase;
+    }
+
+    public void setIdFase(int idFase) {
+        this.idFase = idFase;
+    }
 }
 
 

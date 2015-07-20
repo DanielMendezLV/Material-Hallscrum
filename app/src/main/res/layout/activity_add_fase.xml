@@ -1,18 +1,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.halley.md.hallscrum.Activity.Adds.AddMetaActivity">
+    tools:context="org.halley.md.hallscrum.Activity.Adds.AddFaseActivity">
+
 
     <include
-        android:id="@+id/toolbar_meta"
+        android:id="@+id/toolbar_addfase"
         layout="@layout/app_bar" />
+
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/colorPrimaryDark"
         android:id="@+id/relativeLayout"
-        android:layout_below="@+id/toolbar_meta"
+        android:layout_below="@+id/toolbar_team"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -21,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/textView3"
-            android:text="@string/title_activity_add_meta"
+            android:text="@string/title_activity_add_fase"
             android:textSize="@dimen/abc_action_bar_progress_bar_size"
             android:textColor="#ffffffff"
             android:gravity="center"
@@ -37,7 +41,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/txt_add_meta"
+        android:id="@+id/txt_add_fase"
         android:hint="@string/hint_every_name"
         android:gravity="center"
         android:layout_centerVertical="true"
@@ -48,8 +52,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Agregar"
-        android:id="@+id/btn_add_meta"
-        android:layout_below="@+id/txt_add_meta"
+        android:id="@+id/btn_add_fase"
+        android:layout_below="@+id/txt_add_fase"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="39dp" />

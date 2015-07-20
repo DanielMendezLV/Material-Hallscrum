@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/metaThumbnail"
+        android:id="@+id/faseThumbnail"
         android:layout_width="54dp"
         android:layout_height="80dp"
         android:layout_marginTop="16dp"
@@ -12,13 +12,13 @@
         />
 
     <TextView
-        android:id="@+id/metaTitle"
+        android:id="@+id/faseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/faseThumbnail"
         android:textColor="#636363"
-        android:layout_alignTop="@+id/metaThumbnail"
         android:layout_marginLeft="56dp"
         android:gravity="right"
         android:padding="4dp"
@@ -26,13 +26,13 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/metaDate"
+        android:id="@+id/faseDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/metaTitle"
-        android:padding="4dp"
+        android:layout_below="@id/faseTitle"
         android:textColor="#636363"
+        android:padding="4dp"
         android:textSize="14sp"
         android:text="Soy la fecha"
         />

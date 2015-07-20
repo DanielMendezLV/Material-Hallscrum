@@ -66,6 +66,18 @@
         </activity>
         <activity
             android:name=".Activity.Adds.AddMetaActivity"
+            android:label="@string/title_activity_add_meta" >
+        </activity>
+        <activity
+            android:name=".Activity.Listed.ListFasesActivity"
+            android:label="@string/title_activity_list_fases" >
+        </activity>
+        <activity
+            android:name=".Activity.Listed.ListMetaActivity"
+            android:label="@string/title_activity_list_meta" >
+        </activity>
+        <activity
+            android:name=".Activity.Adds.AddFaseActivity"
             android:label="@string/title_activity_add_fase" >
         </activity>
     </application>
