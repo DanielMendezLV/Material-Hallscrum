@@ -34,7 +34,6 @@ public class Fragment_Dialog_Fase {
                     // intent.putExtra("nombreproyecto",tv.getText().toString());
                     context.startActivity(intent);
                 }
-
             }
         });
 

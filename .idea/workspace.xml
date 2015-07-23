@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fragment_Dialog_Project.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Fragment_Dialog_Project.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="50" selection-start-line="34" selection-start-column="20" selection-end-line="36" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.62222224">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fragment_Dialog_Fase.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fragment_Dialog_Fase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Fase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6814815">
-              <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1363,7 +1363,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Adapter/TeamAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Team.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_fase.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Fase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Adapter/FaseAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Adapter/MetasAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Meta.java" />
@@ -1373,6 +1372,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Activity/Listed/ListFasesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Activity/Adds/AddFaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Activity/Adds/AddMetaActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Fase.java" />
       </list>
     </option>
   </component>
@@ -2378,16 +2378,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="50" selection-start-line="34" selection-start-column="20" selection-end-line="36" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Proyect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2440,8 +2430,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Fase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6814815">
-          <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/org/halley/md/hallscrum/Fragment/Fragment_Dialog_Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62222224">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
