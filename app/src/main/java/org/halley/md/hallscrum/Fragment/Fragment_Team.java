@@ -89,8 +89,8 @@ public class Fragment_Team extends android.support.v4.app.Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), "" + error, Toast.LENGTH_LONG).show();
-                Log.d("VolleyError", "Error");
+                sendJSONRequest();
+                Log.d("VolleyError", "Error Intentando de nuevo");
             }
         });
         requestQueue.add(request);
@@ -106,6 +106,11 @@ public class Fragment_Team extends android.support.v4.app.Fragment {
                 team.setNombre(proyectoDownload.getString("nombre"));
                 team.setIdEquipo(proyectoDownload.getInt("idequipo"));
                 team.setKey(proyectoDownload.getString("mykey"));
+                if(i%2==0){
+                    team.setFoto(R.drawable.flashflash);
+                }else{
+                    team.setFoto(R.drawable.spidy);
+                }
                 listaTeams.add(team);
             } catch (JSONException e) {
                 Log.d("JSONException", "Error");

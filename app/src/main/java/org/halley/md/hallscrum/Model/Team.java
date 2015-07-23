@@ -8,6 +8,17 @@ public class Team {
     private String nombre;
     private String key;
 
+    public int getFoto() {
+        return foto;
+    }
+
+    public void setFoto(int foto) {
+        this.foto = foto;
+    }
+
+    private int foto;
+
+
     public String getKey() {
         return key;
     }

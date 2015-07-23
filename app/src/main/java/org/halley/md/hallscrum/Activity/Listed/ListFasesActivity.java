@@ -74,7 +74,7 @@ public class ListFasesActivity extends ActionBarActivity {
 
         listFases.setLayoutManager(new LinearLayoutManager(this));
         Context contx = getApplicationContext();
-        adapter = new FaseAdapter(contx);
+        adapter = new FaseAdapter(ListFasesActivity.this);
         listFases.setAdapter(adapter);
 
 
@@ -127,7 +127,14 @@ public class ListFasesActivity extends ActionBarActivity {
                 fase.setFechaInicio(faseDownload.getString("fechainicio"));
                 fase.setFechaInicio(faseDownload.getString("fechafinalizacion"));
                 fase.setIdFase(faseDownload.getInt("idfase"));
-                fase.setFoto(R.drawable.ic_action_person);
+
+                if(i%2==0){
+                    fase.setFoto(R.drawable.positivism);
+                }else{
+                    fase.setFoto(R.drawable.nihilism);
+                }
+
+
                 fase.setIdProyecto(faseDownload.getInt("idproyecto"));
                 listaFases.add(fase);
             } catch (JSONException e) {

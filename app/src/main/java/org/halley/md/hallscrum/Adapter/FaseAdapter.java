@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
 import org.halley.md.hallscrum.Activity.Listed.ListMetaActivity;
+import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Fase;
+import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Project;
 import org.halley.md.hallscrum.Model.Fase;
 import org.halley.md.hallscrum.Model.Meta;
 import org.halley.md.hallscrum.R;
@@ -73,12 +75,8 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(context, ListMetaActivity.class);
-            intent.putExtra("idfase", id);
-            //esto me tiene preocupado, pero por ahora lo dejare así.
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//not recommend
-            // intent.putExtra("nombreproyecto",tv.getText().toString());
-            context.startActivity(intent);
+            Fragment_Dialog_Fase fragment_dialog_fase = new Fragment_Dialog_Fase();
+            fragment_dialog_fase.createDialog(context, id);
         }
     }
 

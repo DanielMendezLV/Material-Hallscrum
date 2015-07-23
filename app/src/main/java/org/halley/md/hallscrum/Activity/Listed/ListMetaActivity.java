@@ -71,7 +71,7 @@ public class ListMetaActivity extends ActionBarActivity {
         });
 
         listMetas.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MetasAdapter(getApplicationContext());
+        adapter = new MetasAdapter(ListMetaActivity.this);
         listMetas.setAdapter(adapter);
         Bundle extras = getIntent().getExtras();
         int idfase = extras.getInt("idfase");
@@ -118,12 +118,17 @@ public class ListMetaActivity extends ActionBarActivity {
             try {
                 JSONObject metaDownload = response.getJSONObject(i);
                 Meta meta = new Meta();
-                meta.setDescripcion(metaDownload.getString(("descripcion")));
                 meta.setEstado(metaDownload.getBoolean(("estado")));
                 meta.setDescripcion(metaDownload.getString(("descripcion")));
                 meta.setIdFase(metaDownload.getInt("idfase"));
                 meta.setIdMeta(metaDownload.getInt("idmeta"));
                 listaMetas.add(meta);
+                if(i%2==0){
+                    meta.setFoto(R.drawable.pipa);
+                }else{
+                    meta.setFoto(R.drawable.doppler);
+                }
+
             } catch (JSONException e) {
                 Log.d("JSONException", "Error");
             }

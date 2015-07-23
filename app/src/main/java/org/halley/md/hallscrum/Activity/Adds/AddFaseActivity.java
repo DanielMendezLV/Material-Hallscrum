@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.Model.Team;
 import org.halley.md.hallscrum.R;
@@ -81,7 +82,11 @@ public class AddFaseActivity extends ActionBarActivity {
         }
 
         if(id==android.R.id.home){
-            startActivity(new Intent(AddFaseActivity.this,MainActivity.class));
+            Bundle extras = getIntent().getExtras();
+            int idProyecto = extras.getInt("idproyecto");
+            Intent intent = new Intent(AddFaseActivity.this,ListFasesActivity.class);
+            intent.putExtra("idproyecto", idProyecto);
+            startActivity(intent);
         }
 
 

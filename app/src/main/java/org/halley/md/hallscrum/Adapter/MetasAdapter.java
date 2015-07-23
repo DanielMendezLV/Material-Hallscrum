@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Meta;
+import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Project;
 import org.halley.md.hallscrum.Model.Meta;
 import org.halley.md.hallscrum.R;
 
@@ -19,9 +21,10 @@ import java.util.ArrayList;
 public class MetasAdapter extends RecyclerView.Adapter<MetasAdapter.ViewHolderMetasAdapter> {
     private LayoutInflater inflater;
     private ArrayList<Meta> metas = new ArrayList<>();
-
+    private Context context;
 
     public MetasAdapter(Context context){
+        this.context=context;
         inflater= LayoutInflater.from(context);
 
     }
@@ -52,15 +55,22 @@ public class MetasAdapter extends RecyclerView.Adapter<MetasAdapter.ViewHolderMe
         return metas.size();
     }
 
-    static class ViewHolderMetasAdapter extends RecyclerView.ViewHolder{
+    class ViewHolderMetasAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView metaThumbnail;
         private TextView metaTitle;
 
 
         public ViewHolderMetasAdapter(View itemView){
             super(itemView);
+            itemView.setOnClickListener(this);
             metaThumbnail = (ImageView) itemView.findViewById(R.id.metaThumbnail);
             metaTitle = (TextView) itemView.findViewById(R.id.metaTitle);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Fragment_Dialog_Meta fdmeta = new Fragment_Dialog_Meta();
+            fdmeta.createDialog(context);
         }
     }
 

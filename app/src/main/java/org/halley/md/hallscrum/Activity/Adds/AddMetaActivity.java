@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
+import org.halley.md.hallscrum.Activity.Listed.ListMetaActivity;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.R;
 import org.halley.md.hallscrum.http.HallscrumRequests;
@@ -79,7 +81,11 @@ public class AddMetaActivity extends ActionBarActivity {
         }
 
         if(id==android.R.id.home){
-            startActivity(new Intent(AddMetaActivity.this,MainActivity.class));
+            Bundle extras = getIntent().getExtras();
+            int idfase = extras.getInt("idfase");
+            Intent intent = new Intent(AddMetaActivity.this, ListMetaActivity.class);
+            intent.putExtra("idfase", idfase);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,6 +33,7 @@ import java.util.List;
 
 public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListener {
     private RecyclerView recyclerView;
+
     public static final String PREF_FILE_NAME="testpref";
     public static final String KEY_USER_DRAWER="user_learned_drawer";
     private ActionBarDrawerToggle mDrawerToggle;

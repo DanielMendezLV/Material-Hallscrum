@@ -79,7 +79,8 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("VolleyError", "Error");
+                sendJSONRequest();
+                Log.d("VolleyError", "Error Intentando de nuevo");
             }
 
 
@@ -96,7 +97,12 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
                 pry.setNombre(proyectoDownload.getString("nombre"));
                 pry.setFechaCreacion(proyectoDownload.getString("fechacreacion"));
                 pry.setIdProyecto(proyectoDownload.getInt("idproyecto"));
-                pry.setFoto(R.drawable.ic_action_person);
+                if(i%2==0){
+                    pry.setFoto(R.drawable.houston);
+                }else{
+                    pry.setFoto(R.drawable.golden);
+                }
+
 
                 listaProyectos.add(pry);
             } catch (JSONException e) {

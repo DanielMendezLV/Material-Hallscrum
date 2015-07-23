@@ -43,6 +43,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
         Team currentTeam = teams.get(position);
         holder.teamTitle.setText(currentTeam.getNombre());
         holder.teamKey.setText(currentTeam.getKey());
+        holder.teamThumbnail.setImageResource(currentTeam.getFoto());
     }
 
 
@@ -55,11 +56,13 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
     static class ViewHolderTeamAdapter extends RecyclerView.ViewHolder{
         private TextView teamTitle;
         private TextView teamKey;
+        private ImageView teamThumbnail;
 
         public ViewHolderTeamAdapter(View itemView){
             super(itemView);
             teamTitle = (TextView) itemView.findViewById(R.id.teamTitle);
             teamKey = (TextView) itemView.findViewById(R.id.teamCode);
+            teamThumbnail = (ImageView) itemView.findViewById(R.id.teamThumbnail);
         }
     }
 }
