@@ -80,6 +80,34 @@
             android:name=".Activity.Adds.AddFaseActivity"
             android:label="@string/title_activity_add_fase" >
         </activity>
+
+        <receiver android:name=".Activity.WidgetProvider" >
+            <intent-filter>
+
+                <!--
+    This widget provider receives broadcast with following action
+    name or simply onUpdate of AppWidgetProvider is called
+                -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widgetinfo" />
+        </receiver>
+
+        <service
+            android:name=".Activity.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:name=".Activity.Update.EditTeamActivity"
+            android:label="@string/title_activity_edit_team" >
+        </activity>
+        <activity
+            android:name=".Activity.Update.EditProyectActivity"
+            android:label="@string/title_activity_edit_proyect" >
+        </activity>
     </application>
 
 </manifest>

@@ -29,7 +29,7 @@ public class Fragment_Dialog_Fase {
                 if(i ==2){
                     Intent intent = new Intent(context, ListMetaActivity.class);
                     intent.putExtra("idfase", id);
-                    //esto me tiene preocupado, pero por ahora lo dejare así.
+                    //esto me tiene preocupado, pero por ahora lo dejare asi.
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);//not recommend
                     // intent.putExtra("nombreproyecto",tv.getText().toString());
                     context.startActivity(intent);
