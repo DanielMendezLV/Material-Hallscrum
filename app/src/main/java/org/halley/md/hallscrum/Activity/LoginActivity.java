@@ -13,7 +13,6 @@ import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.Model.Usuario;
 import org.halley.md.hallscrum.R;
 import org.halley.md.hallscrum.db.DbManager;
-import org.halley.md.hallscrum.http.HttpHandler;
 import org.halley.md.hallscrum.http.LoginWS;
 
 import java.util.concurrent.ExecutionException;
@@ -22,7 +21,6 @@ import java.util.concurrent.ExecutionException;
 public class LoginActivity extends Activity {
     private Button btnLogin;
     private Button btnUnete;
-    private HttpHandler handler;
     private String datos="";
     private TextView txtUsuario;
     private TextView txtContrasena;
@@ -34,8 +32,6 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         btnLogin=(Button)(findViewById(R.id.btnLogin));
         btnUnete=(Button)(findViewById(R.id.btnUnete));
-
-        handler=new HttpHandler();
         txtContrasena=(TextView)findViewById(R.id.txtContrasena);
         txtUsuario=(TextView)findViewById(R.id.txtUsuario);
 

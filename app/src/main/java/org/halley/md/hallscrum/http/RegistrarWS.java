@@ -21,7 +21,7 @@ import java.io.UnsupportedEncodingException;
 
 public class RegistrarWS extends AsyncTask<String,Integer,Usuario> {
     private static String URL_LOGIN_API= AddressAPI.URL_MAKE_AND_ACCOUNT;
-    private static String TOKEN_KEY="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDM2MjAyMDAxLCJleHAiOjE0Mzc5MzAwMDF9.vUyVP-NcPz0ZaAuENvQXmwOKxwqXVZEL2jg47JKiYwc";
+    private static String TOKEN_KEY=AddressAPI.TOKEN;
     @Override
     protected Usuario doInBackground(String... params) {
         HttpClient httpClient = new DefaultHttpClient();

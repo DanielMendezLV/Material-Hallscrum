@@ -18,6 +18,8 @@ import android.widget.TextView;
 import org.halley.md.hallscrum.API.AddressAPI;
 import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
 import org.halley.md.hallscrum.Activity.Listed.ListMetaActivity;
+import org.halley.md.hallscrum.Activity.Update.EditFaseActivity;
+import org.halley.md.hallscrum.Activity.Update.EditProyectActivity;
 import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Fase;
 import org.halley.md.hallscrum.Fragment.Fragment_Dialog_Project;
 import org.halley.md.hallscrum.Model.Fase;
@@ -65,6 +67,7 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
         holder.faseTitle.setText(currentFase.getNombre());
         holder.faseThumbnail.setImageResource(currentFase.getFoto());
         holder.id=currentFase.getIdFase();
+        holder.titleDate=(currentFase.getFechaInicio()+"-"+currentFase.getFechaFinalizacion());
     }
 
     @Override
@@ -75,6 +78,7 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
     class ViewHolderFaseAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
         private ImageView faseThumbnail;
         private TextView faseTitle;
+        private String titleDate;
         private int id;
 
         public ViewHolderFaseAdapter(View itemView){
@@ -105,6 +109,14 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
                         hallscrumRequests.addHallScrum(AddressAPI.URL_FASES_DEL,dell);
                     }
 
+                    if(i==1){
+                        Intent intent = new Intent(context, EditFaseActivity.class);
+                        String titleFase = ((TextView) faseTitle).getText().toString();
+                        intent.putExtra("titleFase", titleFase);
+                        intent.putExtra("idFase", id);
+                        intent.putExtra("titleDate",titleDate);
+                        context.startActivity(intent);
+                    }
                     if(i ==2){
                         Intent intent = new Intent(context, ListMetaActivity.class);
                         intent.putExtra("idfase", id);

@@ -108,6 +108,14 @@
             android:name=".Activity.Update.EditProyectActivity"
             android:label="@string/title_activity_edit_proyect" >
         </activity>
+        <activity
+            android:name=".Activity.Update.EditFaseActivity"
+            android:label="@string/title_activity_edit_fase" >
+        </activity>
+        <activity
+            android:name=".Activity.Update.EditMetaActivity"
+            android:label="@string/title_activity_edit_meta" >
+        </activity>
     </application>
 
 </manifest>

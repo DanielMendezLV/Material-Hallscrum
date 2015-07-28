@@ -10,4 +10,5 @@
     <color name="colorAccent">#FF80AB</color>
     <color name="okBtn">#1565C0</color>
     <color name="greyBtn">#9E9E9E</color>
+    <color name="darker_gray">#9E9E9E</color>
 </resources>

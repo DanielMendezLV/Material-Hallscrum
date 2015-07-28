@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.halley.md.hallscrum.Activity.Update.EditTeamActivity">
+    tools:context="org.halley.md.hallscrum.Activity.Update.EditFaseActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/txtEdit"
-            android:text="@string/editar_equipo"
+            android:text="@string/title_activity_edit_fase"
             android:textSize="@dimen/abc_action_bar_progress_bar_size"
             android:textColor="#ffffffff"
             android:gravity="center"
@@ -49,20 +49,20 @@
         android:text="@string/edit_name"
         android:id="@+id/txtNuevoNombre"
         android:textSize="20dp"
-        android:layout_below="@+id/txtcode_team"
+        android:layout_below="@+id/txtdate_fase"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <View
         style="@style/Divider"
         android:id="@+id/separator"
         android:layout_below="@+id/txtNuevoNombre"
-         />
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/code_team"
-        android:id="@+id/txvCodeTeam"
+        android:text="@string/fecha_inicio_y_finalizacion"
+        android:id="@+id/txvdatefase"
         android:textSize="20dp"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -71,16 +71,18 @@
     <View
         style="@style/Divider"
         android:id="@+id/separator2"
-        android:layout_below="@+id/txvCodeTeam"
+        android:layout_below="@+id/txvdatefase"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/code_team"
-        android:id="@+id/txtcode_team"
+        android:text="@string/fecha_inicio_y_finalizacion"
+        android:id="@+id/txtdate_fase"
         android:textSize="15dp"
         android:layout_below="@+id/separator2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>

@@ -31,4 +31,58 @@
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtNewName"
+        android:hint="@string/edit_name"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/separator"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_name"
+        android:id="@+id/txtNuevoNombre"
+        android:textSize="20dp"
+        android:layout_below="@+id/txtdate_proyect"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <View
+        style="@style/Divider"
+        android:id="@+id/separator"
+        android:layout_below="@+id/txtNuevoNombre"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_proyect"
+        android:id="@+id/txvdateproyect"
+        android:textSize="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <View
+        style="@style/Divider"
+        android:id="@+id/separator2"
+        android:layout_below="@+id/txvdateproyect"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_proyect"
+        android:id="@+id/txtdate_proyect"
+        android:textSize="15dp"
+        android:layout_below="@+id/separator2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
 </RelativeLayout>

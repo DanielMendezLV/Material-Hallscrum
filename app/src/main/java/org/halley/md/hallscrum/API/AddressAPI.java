@@ -4,8 +4,8 @@ package org.halley.md.hallscrum.API;
  * Created by Mendez Diaz on 18/07/2015.
  */
 public class AddressAPI {
-
-    public static final String URL= "192.168.1.10";
+    public static final String TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyb2lkIiwiaWF0IjoxNDM4MDIxNDA5LCJleHAiOjE0Mzk3NDk0MDl9.OCONOzFPcKeT4M2jjWeaDrR5-Pyjtuv5CUbxhVqJF4I";
+    public static final String URL= "192.168.1.4";
     public static final String URL_LOGIN ="http://"+URL+":3000/auth/login";
     public static final String URL_MAKE_AND_ACCOUNT ="http://"+URL+":3000/api/v1/registrar";
     public static final String URL_PROJECTS ="http://"+URL+":3000/api/proyect";

@@ -58,6 +58,14 @@
     <string name="what_do_you_need">¿Que deseas hacer?</string>
     <string name="title_activity_edit_team">Actualizar Equipo</string>
     <string name="title_activity_edit_proyect">Actualizar Proyecto</string>
+    <string name="title_activity_edit_fase">Actualizar Fase</string>
+    <string name="title_activity_edit_meta">Actualizar Meta</string>
 
+
+    <string name="edit_name">Nuevo Nombre</string>
+    <string name="code_team">Codigo de Equipo</string>
+    <string name="date_proyect">Fecha de Proyecto</string>
+    <string name="fecha_inicio_y_finalizacion">Duración</string>
+    <string name="estado_meta">Estado</string>
 
 </resources>

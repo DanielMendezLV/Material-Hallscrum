@@ -95,7 +95,9 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
                 JSONObject proyectoDownload = response.getJSONObject(i);
                 Proyect pry = new Proyect();
                 pry.setNombre(proyectoDownload.getString("nombre"));
-                pry.setFechaCreacion(proyectoDownload.getString("fechacreacion"));
+                String fecha[] = proyectoDownload.getString("fechacreacion").split("T");
+                pry.setFechaCreacion(fecha[0]);
+
                 pry.setIdProyecto(proyectoDownload.getInt("idproyecto"));
                 if(i%2==0){
                     pry.setFoto(R.drawable.houston);

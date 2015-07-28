@@ -124,8 +124,8 @@ public class ListFasesActivity extends ActionBarActivity {
                 JSONObject faseDownload = response.getJSONObject(i);
                 Fase fase = new Fase();
                 fase.setNombre(faseDownload.getString("nombre"));
-                fase.setFechaInicio(faseDownload.getString("fechainicio"));
-                fase.setFechaInicio(faseDownload.getString("fechafinalizacion"));
+                fase.setFechaInicio(getFecha(faseDownload.getString("fechainicio")));
+                fase.setFechaFinalizacion(getFecha(faseDownload.getString("fechafinalizacion")));
                 fase.setIdFase(faseDownload.getInt("idfase"));
 
                 if(i%2==0){
@@ -145,6 +145,10 @@ public class ListFasesActivity extends ActionBarActivity {
         //Toast.makeText(getActivity(),proyects.toString(),Toast.LENGTH_LONG).show();
     }
 
+    public String getFecha(String fechaToFormat){
+        String fecha[] = fechaToFormat.split("T");
+        return fecha[0];
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

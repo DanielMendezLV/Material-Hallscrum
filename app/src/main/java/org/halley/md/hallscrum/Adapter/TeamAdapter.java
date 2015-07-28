@@ -108,6 +108,11 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
 
                     if(i==1){
                         Intent intent = new Intent(context, EditTeamActivity.class);
+                        String titleTeam = ((TextView) teamTitle).getText().toString();
+                        String titleKey = ((TextView) teamKey).getText().toString();
+                        intent.putExtra("nameTeam", titleTeam);
+                        intent.putExtra("idTeam", id);
+                        intent.putExtra("codeTeam",titleKey);
                         context.startActivity(intent);
                     }
 

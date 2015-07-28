@@ -109,6 +109,11 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
 
                     if(i==1){
                         Intent intent = new Intent(context, EditProyectActivity.class);
+                        String titleProyect = ((TextView) proyectTitle).getText().toString();
+                        String titleDate = ((TextView) proyectDate).getText().toString();
+                        intent.putExtra("titleProyect", titleProyect);
+                        intent.putExtra("idProyect", id);
+                        intent.putExtra("titleDate",titleDate);
                         context.startActivity(intent);
                     }
 
