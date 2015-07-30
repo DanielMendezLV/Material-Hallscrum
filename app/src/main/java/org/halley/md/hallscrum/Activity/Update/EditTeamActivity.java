@@ -66,8 +66,8 @@ public class EditTeamActivity extends ActionBarActivity {
 
         if(id==android.R.id.home){
             Bundle extra = getIntent().getExtras();
-            String nombre = extra.getString("titleProyect");
-            String idTeam = Integer.toString(extra.getInt("idProyect"));
+            String nombre = extra.getString("nameTeam");
+            String idTeam = Integer.toString(extra.getInt("idTeam"));
 
             if(VerificarEditar(nombre)){
                 //This works!

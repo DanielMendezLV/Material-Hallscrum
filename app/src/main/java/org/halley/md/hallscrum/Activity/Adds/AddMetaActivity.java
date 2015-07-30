@@ -1,5 +1,6 @@
 package org.halley.md.hallscrum.Activity.Adds;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -44,15 +46,40 @@ public class AddMetaActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //System.out.println("llega al click?");
                 //nombre equipo fecha
+                ProgressDialog progress = ProgressDialog.show(AddMetaActivity.this, "Agregando", "Espere un momento", true);
+
                 Bundle extras = getIntent().getExtras();
                 String idFase = Integer.toString(extras.getInt("idfase"));
                 HallscrumRequests hallscrumRequests = new HallscrumRequests();
                 hallscrumRequests.addHallScrum(AddressAPI.URL_META_INSERT, getMapAgregar(txtNombreMeta.getText().toString(), idFase));
+                progress.dismiss();
+                Intent intent = new Intent(AddMetaActivity.this, ListMetaActivity.class);
+                intent.putExtra("idfase", extras.getInt("idfase"));
+                startActivity(intent);
             }
         });
 
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindDrawables(findViewById(R.id.add_meta_act));
+        System.gc();
+    }
+
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+            view.getBackground().setCallback(null);
+        }
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+            ((ViewGroup) view).removeAllViews();
+        }
+    }
 
     public Map<String, String> getMapAgregar(String nombre, String id){
         Map<String, String> add= new HashMap<String, String>();

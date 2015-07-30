@@ -19,19 +19,32 @@ public class Splash extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.splash);
 
-        TimerTask task=new TimerTask() {
-            @Override
-            public void run() {
-                Intent mainIntent=new Intent().setClass(Splash.this,LoginActivity.class);
-                startActivity(mainIntent);
+        Thread logoTimer = new Thread() {
+            public void run(){
+                try{
+                    int logoTimer = 0;
+                    while(logoTimer < 5000){
+                        sleep(100);
+                        logoTimer = logoTimer +100;
+                    };
+                    Intent mainIntent=new Intent().setClass(Splash.this,LoginActivity.class);
+                    startActivity(mainIntent);
+                }
 
+                catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                finally{
+                    finish();
+                }
             }
         };
-        Timer timer=new Timer();
-        timer.schedule(task,SPLASH_SCREEN_DELAY);
+
+        logoTimer.start();
+
     }
 }

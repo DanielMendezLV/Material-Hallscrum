@@ -1,5 +1,6 @@
 package org.halley.md.hallscrum.Activity.Adds;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,12 +8,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.halley.md.hallscrum.API.AddressAPI;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.R;
+import org.halley.md.hallscrum.Session.UserSession;
 import org.halley.md.hallscrum.db.DbManager;
 import org.halley.md.hallscrum.http.HallscrumRequests;
 
@@ -24,6 +28,29 @@ public class AddTeamActivity extends ActionBarActivity {
     private Button btnAgregarTeam;
     private TextView txtNombreTeam;
     private String idUsuario;
+    private UserSession session;
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindDrawables(findViewById(R.id.add_team_act));
+        System.gc();
+    }
+
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+            view.getBackground().setCallback(null);
+        }
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+            ((ViewGroup) view).removeAllViews();
+        }
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +63,24 @@ public class AddTeamActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        DbManager db = new DbManager(getApplicationContext());
-        idUsuario = db.getIdUsuarioLogueado();
-
+        session = new UserSession(getApplicationContext());
+        // Check user login (this is the important point)
+        // If User is not logged in , This will redirect user to LoginActivity
+        // and finish current activity from activity stack.
+        if(session.checkLogin())
+            finish();
 
         btnAgregarTeam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //System.out.println("llega al click?");
-                System.out.println("el id es " + idUsuario);
+                ProgressDialog progress = ProgressDialog.show(AddTeamActivity.this, "Agregando", "Espere un momento", true);
+                HashMap<String, String> user = session.getUserDetails();
+                String id = user.get(UserSession.KEY_ID);
                 HallscrumRequests hallscrumRequests = new HallscrumRequests();
-                hallscrumRequests.addHallScrum(AddressAPI.URL_TEAMS,getMapAgregar(txtNombreTeam.getText().toString(),idUsuario));
+                hallscrumRequests.addHallScrum(AddressAPI.URL_TEAMS, getMapAgregar(txtNombreTeam.getText().toString(), id));
+                progress.dismiss();
+                startActivity(new Intent(AddTeamActivity.this, MainActivity.class));
             }
         });
 

@@ -24,6 +24,7 @@ import org.halley.md.hallscrum.Activity.MarkupActivity;
 import org.halley.md.hallscrum.Adapter.TarjetAdapter;
 import org.halley.md.hallscrum.Model.TarjetRecycler;
 import org.halley.md.hallscrum.R;
+import org.halley.md.hallscrum.Session.UserSession;
 import org.halley.md.hallscrum.db.DbManager;
 
 import java.util.ArrayList;
@@ -158,15 +159,9 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
                 startActivity(new Intent(getActivity(), AboutUsActivity.class));
                 break;
             case 4:
-
-                DbManager dbManager = new DbManager(getActivity());
-                Cursor cursor = dbManager.query(DbManager.TABLE_USUARIO,null,null,null);
-                while(cursor.moveToNext()){
-                    String id = cursor.getString(0);
-                    dbManager.eliminar(id);
-                }
-
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+                UserSession session = new UserSession(getActivity());
+                session.logoutUser();
+                if(session.checkLogin())
                 break;
         }
 

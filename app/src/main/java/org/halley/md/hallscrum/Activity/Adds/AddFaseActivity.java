@@ -1,5 +1,6 @@
 package org.halley.md.hallscrum.Activity.Adds;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,12 +8,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.halley.md.hallscrum.API.AddressAPI;
 import org.halley.md.hallscrum.Activity.Listed.ListFasesActivity;
+import org.halley.md.hallscrum.Activity.Listed.ListMetaActivity;
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.Model.Team;
 import org.halley.md.hallscrum.R;
@@ -46,13 +49,41 @@ public class AddFaseActivity extends ActionBarActivity {
             public void onClick(View v) {
                 //System.out.println("llega al click?");
                 //nombre equipo fecha
+                ProgressDialog progress = ProgressDialog.show(AddFaseActivity.this, "Agregando", "Espere un momento", true);
+
                 Bundle extras = getIntent().getExtras();
                 String idProyecto = Integer.toString(extras.getInt("idproyecto"));
                 HallscrumRequests hallscrumRequests = new HallscrumRequests();
                 hallscrumRequests.addHallScrum(AddressAPI.URL_FASES_INSERT, getMapAgregar(txtNombreFase.getText().toString(), idProyecto));
+                progress.dismiss();
+                Intent intent = new Intent(AddFaseActivity.this, ListFasesActivity.class);
+                intent.putExtra("idproyecto",extras.getInt("idproyecto"));
+                startActivity(intent);
+
             }
         });
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindDrawables(findViewById(R.id.add_fase_act));
+        System.gc();
+    }
+
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+            view.getBackground().setCallback(null);
+        }
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+            ((ViewGroup) view).removeAllViews();
+        }
+    }
+
 
     public Map<String, String> getMapAgregar(String nombre, String id){
         Map<String, String> add= new HashMap<String, String>();
@@ -88,8 +119,6 @@ public class AddFaseActivity extends ActionBarActivity {
             intent.putExtra("idproyecto", idProyecto);
             startActivity(intent);
         }
-
-
 
         return super.onOptionsItemSelected(item);
     }

@@ -14,6 +14,8 @@ import org.halley.md.hallscrum.Fragment.Fragment_Team;
 import org.halley.md.hallscrum.R;
 import android.content.Context;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by Mendez Diaz on 07/06/2015.
@@ -51,13 +53,16 @@ public class PagerTabAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position){
-        Drawable drawable = context.getResources().getDrawable(icons[position]);
-        drawable.setBounds(0,0,36,36);
-        ImageSpan imageSpan= new ImageSpan(drawable);
-        SpannableString spannableString = new SpannableString(" ");
+        //Drawable drawable = context.getResources().getDrawable(icons[position]);
+        //drawable.setBounds(0,0,36,36);
+        //ImageSpan imageSpan= new ImageSpan(drawable);
+        //SpannableString spannableString = new SpannableString(" ");
 
-        spannableString.setSpan(imageSpan,0,spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return spannableString;
+        //spannableString.setSpan(imageSpan,0,spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ArrayList<String> data = new ArrayList<String>();
+        data.add("Proyectos");
+        data.add("Equipos");
+        return data.get(position);
     }
 
     @Override

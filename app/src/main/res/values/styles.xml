@@ -17,11 +17,11 @@
 </style>
 
 
-    <style name="MyCustomToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+   <!-- <style name="MyCustomToolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:textColorPrimary">#fff</item>
         <item name="android:background">#0277BD</item>
 
-    </style>
+    </style>-->
 
     <style name="Divider">
 

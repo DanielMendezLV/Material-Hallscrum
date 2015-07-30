@@ -1,5 +1,6 @@
 package org.halley.md.hallscrum.Activity.Adds;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -77,19 +79,43 @@ public class AddProyectActivity extends ActionBarActivity implements AdapterView
             public void onClick(View v) {
                 //System.out.println("llega al click?");
                 //nombre equipo fecha
+                ProgressDialog progress = ProgressDialog.show(AddProyectActivity.this, "Agregando", "Espere un momento", true);
                 int tmId = espEquipos.getSelectedItemPosition();
                 spn_teamAdap = espEquipos.getAdapter();
                 Team tms = (Team)spn_teamAdap.getItem(tmId);
                 idEquipo = Integer.toString(tms.getIdEquipo());
-                System.out.println(idEquipo);
+                //System.out.println(idEquipo);
                 Team tm = (Team) ((Spinner) findViewById(R.id.spinner_teams)).getSelectedItem();
                 System.out.println("el id equipo es " + idEquipo);
                 HallscrumRequests hallscrumRequests = new HallscrumRequests();
                 hallscrumRequests.addHallScrum(AddressAPI.URL_PROJECTS,getMapAgregar(txtNombreProyecto.getText().toString(),idEquipo));
+                progress.dismiss();
+                startActivity(new Intent(AddProyectActivity.this, MainActivity.class));
             }
         });
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindDrawables(findViewById(R.id.add_proyect_act));
+        System.gc();
+    }
+
+    private void unbindDrawables(View view) {
+        if (view.getBackground() != null) {
+            view.getBackground().setCallback(null);
+        }
+        if (view instanceof ViewGroup) {
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                unbindDrawables(((ViewGroup) view).getChildAt(i));
+            }
+            ((ViewGroup) view).removeAllViews();
+        }
+    }
+
+
 
     public Map<String, String> getMapAgregar(String nombre, String id){
         Map<String, String> add= new HashMap<String, String>();

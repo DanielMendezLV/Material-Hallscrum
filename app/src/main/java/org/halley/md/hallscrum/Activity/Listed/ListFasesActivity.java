@@ -58,6 +58,7 @@ public class ListFasesActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle extras = getIntent().getExtras();
         int idProyecto = extras.getInt("idproyecto");
+        System.out.println("Id proyecto " + idProyecto);
         listFases = (RecyclerView) findViewById(R.id.listFases);
         FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
         fab.attachToRecyclerView(listFases);
@@ -76,10 +77,6 @@ public class ListFasesActivity extends ActionBarActivity {
         Context contx = getApplicationContext();
         adapter = new FaseAdapter(ListFasesActivity.this);
         listFases.setAdapter(adapter);
-
-
-
-
         //System.out.println("Este es el id proyecto: "+idProyecto);
         sendJSONRequest(Integer.toString(idProyecto));
     }
@@ -95,6 +92,7 @@ public class ListFasesActivity extends ActionBarActivity {
 
 
     public void sendJSONRequest(String idProyecto){
+        System.out.println("...llego de nuevo");
         volleySingleton = volleySingleton.getsInstance();
         requestQueue = volleySingleton.getmRequestQueue();
         Map<String, String> map = getMapAgregar(idProyecto);
