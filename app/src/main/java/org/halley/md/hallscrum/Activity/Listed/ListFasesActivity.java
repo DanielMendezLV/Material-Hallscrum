@@ -171,6 +171,12 @@ public class ListFasesActivity extends ActionBarActivity {
             startActivity(new Intent(ListFasesActivity.this,MainActivity.class));
         }
 
+        if(id==R.id.action_refresh){
+            Bundle extras = getIntent().getExtras();
+            int idProyecto = extras.getInt("idproyecto");
+            sendJSONRequest(Integer.toString(idProyecto));
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

@@ -165,6 +165,14 @@ public class ListMetaActivity extends ActionBarActivity {
             startActivity(new Intent(ListMetaActivity.this,MainActivity.class));
         }
 
+        if(id==R.id.action_refresh){
+            Bundle extras = getIntent().getExtras();
+            int idfase = extras.getInt("idfase");
+            //System.out.println("Este es el id proyecto: "+idProyecto);
+            sendJSONRequest(Integer.toString(idfase));
+        }
+
+
         return super.onOptionsItemSelected(item);
     }
 }
