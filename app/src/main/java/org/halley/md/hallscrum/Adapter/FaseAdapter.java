@@ -65,7 +65,7 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
     public void onBindViewHolder(ViewHolderFaseAdapter holder, int position) {
         Fase currentFase = fases.get(position);
         holder.faseTitle.setText(currentFase.getNombre());
-        holder.faseThumbnail.setImageResource(currentFase.getFoto());
+        //holder.faseThumbnail.setImageResource(currentFase.getFoto());
         holder.id=currentFase.getIdFase();
         holder.titleDate=(currentFase.getFechaInicio()+"-"+currentFase.getFechaFinalizacion());
     }
@@ -76,7 +76,7 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
     }
 
     class ViewHolderFaseAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private ImageView faseThumbnail;
+        //private ImageView faseThumbnail;
         private TextView faseTitle;
         private String titleDate;
         private int id;
@@ -84,7 +84,7 @@ public class FaseAdapter extends RecyclerView.Adapter<FaseAdapter.ViewHolderFase
         public ViewHolderFaseAdapter(View itemView){
             super(itemView);
             itemView.setOnClickListener(this);
-            faseThumbnail = (ImageView) itemView.findViewById(R.id.faseThumbnail);
+            //faseThumbnail = (ImageView) itemView.findViewById(R.id.faseThumbnail);
             faseTitle = (TextView) itemView.findViewById(R.id.faseTitle);
         }
 

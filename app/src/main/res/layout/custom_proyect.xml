@@ -16,7 +16,7 @@
             android:padding="5dp"
             >
 
-            <ImageView
+            <!--<ImageView
                 android:layout_width="54dp"
                 android:layout_height="80dp"
                 android:id="@+id/proyectThumbnail"
@@ -24,13 +24,13 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginRight="16dp"
 
-                />
+                />-->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/proyectTitle"
-                android:layout_toRightOf="@+id/proyectThumbnail"
+
                 android:layout_alignParentTop="true"
                 android:textSize="20sp"
                 />
@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/proyectDate"
-                android:layout_toRightOf="@+id/proyectThumbnail"
+
                 android:layout_below="@+id/proyectTitle"
                 />
 

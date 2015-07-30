@@ -60,7 +60,7 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
         Proyect currentProyect = proyects.get(position);
         holder.proyectTitle.setText(currentProyect.getNombre());
         holder.proyectDate.setText(currentProyect.getFechaCreacion());
-        holder.proyectThumbnail.setImageResource(currentProyect.getFoto());
+        //holder.proyectThumbnail.setImageResource(currentProyect.getFoto());
         holder.id = currentProyect.getIdProyecto();
     }
 
@@ -71,7 +71,7 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
 
     class ViewHolderProyectAdapter extends RecyclerView.ViewHolder implements View.OnClickListener {
         //implements View.OnClickListener
-        private ImageView proyectThumbnail;
+        //private ImageView proyectThumbnail;
         private TextView proyectTitle;
         private TextView proyectDate;
         private int id;
@@ -80,7 +80,7 @@ public class ProyectAdapter extends RecyclerView.Adapter<ProyectAdapter.ViewHold
             super(itemView);
             itemView.setOnClickListener(this);
             //itemView.setOnClickListener(proyectThumbnail);
-            proyectThumbnail = (ImageView) itemView.findViewById(R.id.proyectThumbnail);
+            //proyectThumbnail = (ImageView) itemView.findViewById(R.id.proyectThumbnail);
             proyectTitle = (TextView) itemView.findViewById(R.id.proyectTitle);
             proyectDate = (TextView) itemView.findViewById(R.id.proyectDate);
         }

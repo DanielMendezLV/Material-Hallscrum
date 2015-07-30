@@ -123,11 +123,12 @@ public class ListMetaActivity extends ActionBarActivity {
                 meta.setIdFase(metaDownload.getInt("idfase"));
                 meta.setIdMeta(metaDownload.getInt("idmeta"));
                 listaMetas.add(meta);
+               /* listaMetas.add(meta);
                 if(i%2==0){
                     meta.setFoto(R.drawable.pipa);
                 }else{
                     meta.setFoto(R.drawable.doppler);
-                }
+                }*/
 
             } catch (JSONException e) {
                 Log.d("JSONException", "Error");

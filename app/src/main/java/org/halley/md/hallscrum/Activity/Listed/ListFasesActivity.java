@@ -126,11 +126,11 @@ public class ListFasesActivity extends ActionBarActivity {
                 fase.setFechaFinalizacion(getFecha(faseDownload.getString("fechafinalizacion")));
                 fase.setIdFase(faseDownload.getInt("idfase"));
 
-                if(i%2==0){
+                /*if(i%2==0){
                     fase.setFoto(R.drawable.positivism);
                 }else{
                     fase.setFoto(R.drawable.nihilism);
-                }
+                }*/
 
 
                 fase.setIdProyecto(faseDownload.getInt("idproyecto"));

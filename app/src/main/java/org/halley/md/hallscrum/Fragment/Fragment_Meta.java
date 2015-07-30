@@ -95,7 +95,7 @@ public class Fragment_Meta extends android.support.v4.app.Fragment {
                 Meta me = new Meta();
                 me.setDescripcion(metaDownload.getString("descripcion"));
                 me.setEstado(metaDownload.getBoolean("estado"));
-                me.setFoto(R.drawable.ic_action_person);
+                //me.setFoto(R.drawable.ic_action_person);
                 listaMetas.add(me);
             } catch (JSONException e) {
                 Log.d("JSONException", "Error");

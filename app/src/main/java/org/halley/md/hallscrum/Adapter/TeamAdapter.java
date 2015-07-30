@@ -62,7 +62,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
         Team currentTeam = teams.get(position);
         holder.teamTitle.setText(currentTeam.getNombre());
         holder.teamKey.setText(currentTeam.getKey());
-        holder.teamThumbnail.setImageResource(currentTeam.getFoto());
+       // holder.teamThumbnail.setImageResource(currentTeam.getFoto());
         holder.id = currentTeam.getIdEquipo();
     }
 
@@ -76,7 +76,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
     class ViewHolderTeamAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView teamTitle;
         private TextView teamKey;
-        private ImageView teamThumbnail;
+        //private ImageView teamThumbnail;
         private int id;
 
         public ViewHolderTeamAdapter(View itemView){
@@ -84,7 +84,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolderTeam
             itemView.setOnClickListener(this);
             teamTitle = (TextView) itemView.findViewById(R.id.teamTitle);
             teamKey = (TextView) itemView.findViewById(R.id.teamCode);
-            teamThumbnail = (ImageView) itemView.findViewById(R.id.teamThumbnail);
+            //teamThumbnail = (ImageView) itemView.findViewById(R.id.teamThumbnail);
         }
 
         @Override

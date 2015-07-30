@@ -60,7 +60,7 @@ public class MetasAdapter extends RecyclerView.Adapter<MetasAdapter.ViewHolderMe
     public void onBindViewHolder(ViewHolderMetasAdapter holder, int position) {
         Meta currentMeta = metas.get(position);
         holder.metaTitle.setText(currentMeta.getDescripcion());
-        holder.metaThumbnail.setImageResource(currentMeta.getFoto());
+        //holder.metaThumbnail.setImageResource(currentMeta.getFoto());
         holder.id = currentMeta.getIdMeta();
         if(currentMeta.getEstado()){
             holder.estado="Finalizado";
@@ -76,7 +76,7 @@ public class MetasAdapter extends RecyclerView.Adapter<MetasAdapter.ViewHolderMe
     }
 
     class ViewHolderMetasAdapter extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private ImageView metaThumbnail;
+        //private ImageView metaThumbnail;
         private TextView metaTitle;
         private String estado;
         private int id;
@@ -84,7 +84,7 @@ public class MetasAdapter extends RecyclerView.Adapter<MetasAdapter.ViewHolderMe
         public ViewHolderMetasAdapter(View itemView){
             super(itemView);
             itemView.setOnClickListener(this);
-            metaThumbnail = (ImageView) itemView.findViewById(R.id.metaThumbnail);
+            //metaThumbnail = (ImageView) itemView.findViewById(R.id.metaThumbnail);
             metaTitle = (TextView) itemView.findViewById(R.id.metaTitle);
         }
 

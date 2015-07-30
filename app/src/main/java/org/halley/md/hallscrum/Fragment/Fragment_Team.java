@@ -106,11 +106,11 @@ public class Fragment_Team extends android.support.v4.app.Fragment {
                 team.setNombre(proyectoDownload.getString("nombre"));
                 team.setIdEquipo(proyectoDownload.getInt("idequipo"));
                 team.setKey(proyectoDownload.getString("mykey"));
-                if(i%2==0){
+                /*if(i%2==0){
                     team.setFoto(R.drawable.flashflash);
                 }else{
                     team.setFoto(R.drawable.spidy);
-                }
+                }*/
                 listaTeams.add(team);
             } catch (JSONException e) {
                 Log.d("JSONException", "Error");

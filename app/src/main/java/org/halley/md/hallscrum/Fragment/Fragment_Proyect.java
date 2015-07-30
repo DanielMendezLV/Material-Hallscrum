@@ -99,11 +99,12 @@ public class Fragment_Proyect extends android.support.v4.app.Fragment {
                 pry.setFechaCreacion(fecha[0]);
 
                 pry.setIdProyecto(proyectoDownload.getInt("idproyecto"));
+                /*
                 if(i%2==0){
                     pry.setFoto(R.drawable.houston);
                 }else{
                     pry.setFoto(R.drawable.golden);
-                }
+                }*/
 
 
                 listaProyectos.add(pry);
