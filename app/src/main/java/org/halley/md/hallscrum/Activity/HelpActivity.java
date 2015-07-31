@@ -1,23 +1,36 @@
 package org.halley.md.hallscrum.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import org.halley.md.hallscrum.MainActivity;
 import org.halley.md.hallscrum.R;
 
 public class HelpActivity extends ActionBarActivity {
     private Toolbar toolbar;
+    private Button btnHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
         toolbar = (Toolbar)findViewById(R.id.toolbar);//
+        btnHelp = (Button)findViewById(R.id.btnHelp);
+
+        btnHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                startActivity(i);
+            }
+        });
         //Yo ya no quiero usar tu toolbar, por esto yo te envio el mio para que le des soporte
         setSupportActionBar(toolbar);
         // getSupportActionBar()

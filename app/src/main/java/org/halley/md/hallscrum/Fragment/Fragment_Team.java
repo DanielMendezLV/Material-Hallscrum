@@ -16,9 +16,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.melnykov.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 import org.halley.md.hallscrum.API.AddressAPI;
+import org.halley.md.hallscrum.Activity.Adds.AddProyectActivity;
 import org.halley.md.hallscrum.Activity.Adds.AddTeamActivity;
 import org.halley.md.hallscrum.Adapter.TeamAdapter;
 import org.halley.md.hallscrum.Model.Team;
@@ -39,6 +41,10 @@ public class Fragment_Team extends android.support.v4.app.Fragment {
     private ArrayList<Team> teams = new ArrayList<Team>();
     private RecyclerView listTeams;
     private TeamAdapter adapter;
+    private FloatingActionButton ftlAgregar;
+    private FloatingActionButton ftlRefresh;
+
+
 
 
 
@@ -55,21 +61,40 @@ public class Fragment_Team extends android.support.v4.app.Fragment {
         View view = inflater.inflate(R.layout.fragment_team, container, false);
         listTeams = (RecyclerView) view.findViewById(R.id.listTeams);
         listTeams.setLayoutManager(new LinearLayoutManager(getActivity()));
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_team);
-        fab.attachToRecyclerView(listTeams);
+        FloatingActionMenu menu1 = (FloatingActionMenu) view.findViewById(R.id.menu);
+        ftlAgregar = (FloatingActionButton) view.findViewById(R.id.ftlAgregar);
+        ftlRefresh = (FloatingActionButton) view.findViewById(R.id.ftlRefresh);
 
-        fab.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                startActivity(new Intent(getActivity(), AddTeamActivity.class));
-            }
-        });
-
+        ftlAgregar.setOnClickListener(clickListener);
+        ftlRefresh.setOnClickListener(clickListener);
         adapter = new TeamAdapter(getActivity());
         listTeams.setAdapter(adapter);
         sendJSONRequest();
         return view;
 
     }
+
+
+
+
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String text = "";
+
+            switch (v.getId()) {
+                case R.id.ftlAgregar:
+                    startActivity(new Intent(getActivity(), AddTeamActivity.class));
+                    break;
+                case R.id.ftlRefresh:
+                    //System.out.println("Si lo presione?");
+                    sendJSONRequest();
+                    break;
+            }
+        }
+    };
+
+
 
     public static void getInstance(int position){
 

@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
-
-import org.halley.md.hallscrum.Fragment.Fragment_Meta;
 import org.halley.md.hallscrum.Fragment.Fragment_Proyect;
 import org.halley.md.hallscrum.Fragment.Fragment_Team;
 import org.halley.md.hallscrum.R;

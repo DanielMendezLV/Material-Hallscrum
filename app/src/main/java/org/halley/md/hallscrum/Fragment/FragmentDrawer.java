@@ -75,8 +75,9 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
 
     public static List<TarjetRecycler> getData(){
         List<TarjetRecycler> data = new ArrayList<>();
-        int[] icons = {R.drawable.ic_action_favorite, R.drawable.ic_action_config,R.drawable.ic_action_help,R.drawable.ic_action_about, R.drawable.ic_action_logout};
-        String[] titles = {"Marcadores","Ajustes ", "Ayuda y Sugerencias", "Acerca De", "Logout"};
+       // int[] icons = {R.drawable.ic_action_favorite, R.drawable.ic_action_config,R.drawable.ic_action_help,R.drawable.ic_action_about, R.drawable.ic_action_logout};
+        int[] icons = {R.drawable.ic_action_help,R.drawable.ic_action_about, R.drawable.ic_action_logout};
+        String[] titles = {"Ayuda", "Acerca De", "Logout"};
         for(int i=0; i<titles.length && i<icons.length;i++){
             TarjetRecycler current = new TarjetRecycler();
             current.idIcon = icons[i];
@@ -147,18 +148,12 @@ public class FragmentDrawer extends Fragment implements TarjetAdapter.ClickListe
     public void itemClicked(View view, int position) {
         switch (position){
             case 0:
-                startActivity(new Intent(getActivity(), MarkupActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(getActivity(), ConfigActivity.class));
-                break;
-            case 2:
                 startActivity(new Intent(getActivity(), HelpActivity.class));
                 break;
-            case 3:
+            case 1:
                 startActivity(new Intent(getActivity(), AboutUsActivity.class));
                 break;
-            case 4:
+            case 2:
                 UserSession session = new UserSession(getActivity());
                 session.logoutUser();
                 if(session.checkLogin())

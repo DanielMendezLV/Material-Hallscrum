@@ -74,4 +74,18 @@
     <string name="what_you_need1">que usaste al crear tu cuenta. </string>
 
 
+    <string name="who_are">Hola! Somos Halley</string>
+    <string name="vision">Una empresa donde creemos en tus sueños</string>
+    <string name="thanks">Gracias por utilizar Hallscrum</string>
+    <string name="Team">Este es nuestro equipo: </string>
+    <string name="Member1">Daniel Mendez  : CEO</string>
+    <string name="Member2">Abner Juarez : Servicios </string>
+    <string name="Member3">Alexander Palax: Android Scripter </string>
+    <string name="Member4">Fernando Pnsamiento: JSP</string>
+    <string name="Member5">Luis D. Con : Web Designer</string>
+
+    <string name="to_help0">Presiona el boton </string>
+    <string name="to_help1">para recibir ayuda </string>
+
+
 </resources>
